@@ -1,0 +1,27 @@
+spring:
+    profiles: 
+    active:
+    - dev
+
+---
+server:
+    port: 8021
+spring:
+    profiles: dev
+    appplication:
+        name: config-dev
+eureka:
+    client:
+        server-url:
+            defaultZone: http://eureka1.com:8761/eureka/
+---
+server:
+    port: 8022
+spring:
+    profiles: test
+    application:
+        name: config-test
+eureka:
+    client:
+        server-url:
+            defaultZone: http://eureka2.com:8762/eureka/
