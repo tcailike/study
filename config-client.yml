@@ -16,7 +16,7 @@ eureka:
         instance-id: config-client-3355
     client:
         server-url:
-            defaultZone: http://eureka1.com:8761/eureka/
+            defaultZone: http://eureka1.com:8761/eureka/,http://eureka2.com:8762/eureka/
 ---
 server:
     port: 3356
@@ -30,4 +30,4 @@ eureka:
         instance-id: config-client-3356
     client:
         server-url:
-            defaultZone: http://eureka2.com:8762/eureka/
+            defaultZone: http://eureka1.com:8761/eureka/,http://eureka2.com:8762/eureka/
