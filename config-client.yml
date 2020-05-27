@@ -5,23 +5,29 @@ spring:
 
 ---
 server:
-    port: 8021
+    port: 3355
 spring:
     profiles: dev
     appplication:
-        name: config-dev
+        name: config-client
 eureka:
+    instance:
+        prefer-ip-address: true # 注册服务的时候使用服务的ip地址
+        instance-id: config-client-3355
     client:
         server-url:
             defaultZone: http://eureka1.com:8761/eureka/
 ---
 server:
-    port: 8022
+    port: 3356
 spring:
     profiles: test
     application:
-        name: config-test
+        name: config-client
 eureka:
+    instance:
+        prefer-ip-address: true # 注册服务的时候使用服务的ip地址
+        instance-id: config-client-3356
     client:
         server-url:
             defaultZone: http://eureka2.com:8762/eureka/
