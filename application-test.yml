@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: provider-springcloud-test
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/db1?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8&useSSL=false&zeroDateTimeBehavior=convertToNull&useAffectedRows=true&allowPublicKeyRetrieval=true
+    username: ailike
+    password: ailike
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.ailike.springcloud2.model
+
+eureka:
+  instance:
+    prefer-ip-address: true # 注册服务的时候使用服务的ip地址
+    # 发送心跳的间隔时间
+#    lease-renewal-interval-in-seconds: 2
+    # 最后一次心跳多久后 撤销服务
+#    lease-expiration-duration-in-seconds: 8
+  client:
+    service-url:
+      defaultZone: http://eureka.com:7001/eureka/
