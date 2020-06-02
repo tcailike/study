@@ -22,3 +22,8 @@ eureka:
   client:
     service-url:
       defaultZone: http://eureka.com:7001/eureka/
+rabbitmq:
+  host: localhost
+  port: 5672
+  uaername: guest
+  password: guest
